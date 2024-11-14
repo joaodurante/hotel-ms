@@ -1,12 +1,88 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\jpdem\\source\\repos\\HotelMicroservice\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{00FFBDA4-9E63-40D6-93B7-C583138BCC9F}|BookingService\\Tests\\Domain\\DomainTests\\DomainTests.csproj|c:\\users\\jpdem\\source\\repos\\hotelmicroservice\\bookingservice\\tests\\domain\\domaintests\\booking\\statemachinetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00FFBDA4-9E63-40D6-93B7-C583138BCC9F}|BookingService\\Tests\\Domain\\DomainTests\\DomainTests.csproj|solutionrelative:bookingservice\\tests\\domain\\domaintests\\booking\\statemachinetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6410232-A636-49B7-9F6A-99D76FAB60F7}|BookingService\\Tests\\Application\\ApplicationTests\\ApplicationTests.csproj|c:\\users\\jpdem\\source\\repos\\hotelmicroservice\\bookingservice\\tests\\application\\applicationtests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6410232-A636-49B7-9F6A-99D76FAB60F7}|BookingService\\Tests\\Application\\ApplicationTests\\ApplicationTests.csproj|solutionrelative:bookingservice\\tests\\application\\applicationtests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99C14D63-7CB7-464D-B757-D07EB7E40325}|BookingService\\Tests\\Adapters\\AdaptersTests\\AdaptersTests.csproj|c:\\users\\jpdem\\source\\repos\\hotelmicroservice\\bookingservice\\tests\\adapters\\adapterstests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99C14D63-7CB7-464D-B757-D07EB7E40325}|BookingService\\Tests\\Adapters\\AdaptersTests\\AdaptersTests.csproj|solutionrelative:bookingservice\\tests\\adapters\\adapterstests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEBE7E8D-6778-4A53-82AD-94EB1F76B47A}|BookingService\\Core\\Domain\\Domain.csproj|c:\\users\\jpdem\\source\\repos\\hotelmicroservice\\bookingservice\\core\\domain\\entities\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEBE7E8D-6778-4A53-82AD-94EB1F76B47A}|BookingService\\Core\\Domain\\Domain.csproj|solutionrelative:bookingservice\\core\\domain\\entities\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StateMachineTest.cs",
+              "DocumentMoniker": "C:\\Users\\jpdem\\source\\repos\\HotelMicroservice\\BookingService\\Tests\\Domain\\DomainTests\\Booking\\StateMachineTest.cs",
+              "RelativeDocumentMoniker": "BookingService\\Tests\\Domain\\DomainTests\\Booking\\StateMachineTest.cs",
+              "ToolTip": "C:\\Users\\jpdem\\source\\repos\\HotelMicroservice\\BookingService\\Tests\\Domain\\DomainTests\\Booking\\StateMachineTest.cs",
+              "RelativeToolTip": "BookingService\\Tests\\Domain\\DomainTests\\Booking\\StateMachineTest.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAcwFAAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T23:48:22.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\Users\\jpdem\\source\\repos\\HotelMicroservice\\BookingService\\Tests\\Application\\ApplicationTests\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "BookingService\\Tests\\Application\\ApplicationTests\\UnitTest1.cs",
+              "ToolTip": "C:\\Users\\jpdem\\source\\repos\\HotelMicroservice\\BookingService\\Tests\\Application\\ApplicationTests\\UnitTest1.cs",
+              "RelativeToolTip": "BookingService\\Tests\\Application\\ApplicationTests\\UnitTest1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T23:47:56.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\Users\\jpdem\\source\\repos\\HotelMicroservice\\BookingService\\Tests\\Adapters\\AdaptersTests\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "BookingService\\Tests\\Adapters\\AdaptersTests\\UnitTest1.cs",
+              "ToolTip": "C:\\Users\\jpdem\\source\\repos\\HotelMicroservice\\BookingService\\Tests\\Adapters\\AdaptersTests\\UnitTest1.cs",
+              "RelativeToolTip": "BookingService\\Tests\\Adapters\\AdaptersTests\\UnitTest1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T23:47:35.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Room.cs",
+              "DocumentMoniker": "C:\\Users\\jpdem\\source\\repos\\HotelMicroservice\\BookingService\\Core\\Domain\\Entities\\Room.cs",
+              "RelativeDocumentMoniker": "BookingService\\Core\\Domain\\Entities\\Room.cs",
+              "ToolTip": "C:\\Users\\jpdem\\source\\repos\\HotelMicroservice\\BookingService\\Core\\Domain\\Entities\\Room.cs",
+              "RelativeToolTip": "BookingService\\Core\\Domain\\Entities\\Room.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T23:44:45.74Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
