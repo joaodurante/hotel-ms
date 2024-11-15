@@ -1,0 +1,12 @@
+C:\Users\jpdem\source\repos\HotelMicroservice\BookingService\Core\Application\bin\Debug\net8.0\Application.deps.json
+C:\Users\jpdem\source\repos\HotelMicroservice\BookingService\Core\Application\bin\Debug\net8.0\Application.dll
+C:\Users\jpdem\source\repos\HotelMicroservice\BookingService\Core\Application\bin\Debug\net8.0\Application.pdb
+C:\Users\jpdem\source\repos\HotelMicroservice\BookingService\Core\Application\obj\Debug\net8.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jpdem\source\repos\HotelMicroservice\BookingService\Core\Application\obj\Debug\net8.0\Application.AssemblyInfoInputs.cache
+C:\Users\jpdem\source\repos\HotelMicroservice\BookingService\Core\Application\obj\Debug\net8.0\Application.AssemblyInfo.cs
+C:\Users\jpdem\source\repos\HotelMicroservice\BookingService\Core\Application\obj\Debug\net8.0\Application.csproj.CoreCompileInputs.cache
+C:\Users\jpdem\source\repos\HotelMicroservice\BookingService\Core\Application\obj\Debug\net8.0\Application.sourcelink.json
+C:\Users\jpdem\source\repos\HotelMicroservice\BookingService\Core\Application\obj\Debug\net8.0\Application.dll
+C:\Users\jpdem\source\repos\HotelMicroservice\BookingService\Core\Application\obj\Debug\net8.0\refint\Application.dll
+C:\Users\jpdem\source\repos\HotelMicroservice\BookingService\Core\Application\obj\Debug\net8.0\Application.pdb
+C:\Users\jpdem\source\repos\HotelMicroservice\BookingService\Core\Application\obj\Debug\net8.0\ref\Application.dll
