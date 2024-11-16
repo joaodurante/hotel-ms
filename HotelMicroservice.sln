@@ -37,11 +37,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "BookingService\Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "BookingService\Core\Application\Application.csproj", "{83C7C6EA-DFFD-4750-97B8-F6A5676270E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdaptersTests", "BookingService\Tests\Adapters\AdaptersTests\AdaptersTests.csproj", "{99C14D63-7CB7-464D-B757-D07EB7E40325}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdaptersTests", "BookingService\Tests\Adapters\AdaptersTests\AdaptersTests.csproj", "{99C14D63-7CB7-464D-B757-D07EB7E40325}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationTests", "BookingService\Tests\Application\ApplicationTests\ApplicationTests.csproj", "{E6410232-A636-49B7-9F6A-99D76FAB60F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationTests", "BookingService\Tests\Application\ApplicationTests\ApplicationTests.csproj", "{E6410232-A636-49B7-9F6A-99D76FAB60F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainTests", "BookingService\Tests\Domain\DomainTests\DomainTests.csproj", "{00FFBDA4-9E63-40D6-93B7-C583138BCC9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainTests", "BookingService\Tests\Domain\DomainTests\DomainTests.csproj", "{00FFBDA4-9E63-40D6-93B7-C583138BCC9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
