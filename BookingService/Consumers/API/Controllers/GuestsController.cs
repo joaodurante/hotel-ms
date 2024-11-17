@@ -27,7 +27,14 @@ namespace API.Controllers
 
             if (res.Success) return Created("", res.Data);
 
-            if (res.Error == ErrorCodes.NOT_FOUND) return BadRequest(res);
+            switch(res.Error)
+            {
+                case ErrorCodes.NOT_FOUND:
+                case ErrorCodes.INVALID_PERSON_EMAIL:
+                case ErrorCodes.INVALID_PERSON_DOCUMENT:
+                case ErrorCodes.MISSING_REQUIRED_FIELDS:
+                    return BadRequest(res);
+            }
 
             _logger.LogError("Response with unknown ErrorCode returned", res);
             return BadRequest(500);

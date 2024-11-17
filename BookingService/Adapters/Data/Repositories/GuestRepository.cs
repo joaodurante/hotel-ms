@@ -32,5 +32,10 @@ namespace Data.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public Task<int> Update(Guest guest)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Application.DTOs;
 using Application.Ports;
 using Application.Responses;
+using Domain.Exceptions;
 using Domain.Ports;
 
 namespace Application
@@ -18,7 +19,7 @@ namespace Application
             try
             {
                 var guest = GuestDTO.MapToEntity(request);
-                request.Id = await _guestRepository.Create(guest);
+                request.Id = await guest.Save(_guestRepository);
 
                 return new GuestResponse
                 {
@@ -27,6 +28,33 @@ namespace Application
                 };
 
             } 
+            catch(MissingRequiredFieldsExceptions)
+            {
+                return new GuestResponse
+                {
+                    Success = false,
+                    Error = ErrorCodes.MISSING_REQUIRED_FIELDS,
+                    Message = "Missing required fields"
+                };
+            }
+            catch(InvalidPersonEmail)
+            {
+                return new GuestResponse
+                {
+                    Success = false,
+                    Error = ErrorCodes.INVALID_PERSON_EMAIL,
+                    Message = "The informed email is not valid"
+                };
+            } 
+            catch(InvalidPersonDocumentException)
+            {
+                return new GuestResponse
+                {
+                    Success = false,
+                    Error = ErrorCodes.INVALID_PERSON_DOCUMENT,
+                    Message = "The informed document is not valid"
+                };
+            }
             catch (Exception)
             {
                 return new GuestResponse
