@@ -15,7 +15,7 @@ namespace Domain.Entities
 
         private void ValidateState()
         {
-            if(Name == null || Surname == null ||  Email == null)
+            if (string.IsNullOrEmpty(Name) || string.IsNullOrEmpty(Surname) || string.IsNullOrEmpty(Email))
             {
                 throw new MissingRequiredFieldsExceptions();
             }
@@ -25,7 +25,9 @@ namespace Domain.Entities
                 throw new InvalidPersonEmail();
             }
 
-            if(Document == null ||
+            if (Document == null ||
+                string.IsNullOrEmpty(Document.IdNumber) ||
+                Document.DocumentType == null ||
                 Document.IdNumber.Length < 3 ||
                 Document.DocumentType < 0)
             {
@@ -37,7 +39,7 @@ namespace Domain.Entities
         {
             this.ValidateState();
 
-            if(this.Id == 0)
+            if (this.Id == 0)
             {
                 return await guestRepository.Create(this);
             }
