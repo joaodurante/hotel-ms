@@ -1,6 +1,5 @@
 ﻿using Application.DTOs;
 using Application.Ports;
-using Application.Requests;
 using Application.Responses;
 using Domain.Ports;
 
@@ -14,16 +13,16 @@ namespace Application
             _guestRepository = guestRepository;
         }
 
-        public async Task<GuestResponse> Create(CreateGuestRequest request)
+        public async Task<GuestResponse> Create(GuestDTO request)
         {
             try
             {
-                var guest = GuestDTO.MapToEntity(request.Data);
-                request.Data.Id = await _guestRepository.Create(guest);
+                var guest = GuestDTO.MapToEntity(request);
+                request.Id = await _guestRepository.Create(guest);
 
                 return new GuestResponse
                 {
-                    Data = request.Data,
+                    Data = request,
                     Success = true,
                 };
 

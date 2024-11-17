@@ -1,10 +1,10 @@
-﻿using Application.Requests;
+﻿using Application.DTOs;
 using Application.Responses;
 
 namespace Application.Ports
 {
     public interface IGuestManager
     {
-        Task<GuestResponse> Create(CreateGuestRequest resquest);
+        Task<GuestResponse> Create(GuestDTO guest);
     }
 }

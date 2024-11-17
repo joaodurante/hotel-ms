@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using Domain.Enums;
+using Domain.ValueObjects;
 
 namespace Application.DTOs
 {
@@ -20,12 +21,12 @@ namespace Application.DTOs
                 Name = dto.Name,
                 Surname = dto.Surname,
                 Email = dto.Email,
-                Document =
+                Document = new PersonId
                 {
                     IdNumber = dto.IdNumber,
                     DocumentType = (DocumentType)dto.IdTypeCode
                 }
-            }
+            };
         }
     }
 }
