@@ -11,6 +11,11 @@ namespace Data.Repositories
             this.hotelDbContext = hotelDbContext;
         }
 
+        public async Task<Guest> Get(int id)
+        {
+            return await hotelDbContext.Guests.FindAsync(id);
+        }
+
         public async Task<int> Create(Guest guest)
         {
             hotelDbContext.Guests.Add(guest);
@@ -19,11 +24,6 @@ namespace Data.Repositories
         }
 
         public Task Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Guest> Get(int id)
         {
             throw new NotImplementedException();
         }

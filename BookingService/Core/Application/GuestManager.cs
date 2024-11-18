@@ -14,6 +14,27 @@ namespace Application
             _guestRepository = guestRepository;
         }
 
+        public async Task<GuestResponse> Get(int id)
+        {
+            var guest = await _guestRepository.Get(id);
+            var test = GuestDTO.MapToDTO(guest);
+            if (guest == null)
+            {
+                return new GuestResponse
+                {
+                    Success = false,
+                    Error = ErrorCodes.NOT_FOUND,
+                    Message = "Guest not found"
+                };
+            }
+
+            return new GuestResponse
+            {
+                Success = true,
+                Data = GuestDTO.MapToDTO(guest)
+            };
+        }
+
         public async Task<GuestResponse> Create(GuestDTO request)
         {
             try
@@ -27,8 +48,8 @@ namespace Application
                     Success = true,
                 };
 
-            } 
-            catch(MissingRequiredFieldsExceptions)
+            }
+            catch (MissingRequiredFieldsExceptions)
             {
                 return new GuestResponse
                 {
@@ -37,7 +58,7 @@ namespace Application
                     Message = "Missing required fields"
                 };
             }
-            catch(InvalidPersonEmail)
+            catch (InvalidPersonEmail)
             {
                 return new GuestResponse
                 {
@@ -45,8 +66,8 @@ namespace Application
                     Error = ErrorCodes.INVALID_PERSON_EMAIL,
                     Message = "The informed email is not valid"
                 };
-            } 
-            catch(InvalidPersonDocumentException)
+            }
+            catch (InvalidPersonDocumentException)
             {
                 return new GuestResponse
                 {

@@ -14,10 +14,22 @@ namespace API.Controllers
 
         public GuestsController(
             ILogger<GuestsController> logger,
-            IGuestManager ports) 
+            IGuestManager ports)
         {
             _logger = logger;
             _guestManager = ports;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<GuestDTO>> Get(int id)
+        {
+            var res = await _guestManager.Get(id);
+            if (res.Success)
+            {
+                return Ok(res.Data);
+            }
+
+            return NotFound(res);
         }
 
         [HttpPost]
@@ -27,7 +39,7 @@ namespace API.Controllers
 
             if (res.Success) return Created("", res.Data);
 
-            switch(res.Error)
+            switch (res.Error)
             {
                 case ErrorCodes.NOT_FOUND:
                 case ErrorCodes.INVALID_PERSON_EMAIL:
