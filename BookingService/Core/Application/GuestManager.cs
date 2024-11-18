@@ -17,7 +17,6 @@ namespace Application
         public async Task<GuestResponse> Get(int id)
         {
             var guest = await _guestRepository.Get(id);
-            var test = GuestDTO.MapToDTO(guest);
             if (guest == null)
             {
                 return new GuestResponse

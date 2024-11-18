@@ -23,6 +23,33 @@ namespace ApplicationTests
         }
 
         [Test]
+        public async Task ShouldReturnGuest()
+        {
+            Guest guest = _fixture.Create<Guest>();
+            _mockRepo.Setup(x => x.Get(guest.Id))
+                .Returns(Task.FromResult(guest));
+
+            var res = await _guestManager.Get(guest.Id);
+            Assert.IsNotNull(res);
+            Assert.True(res.Success);
+            Assert.That(res.Data.Id, Is.EqualTo(guest.Id));
+        }
+
+        [Test]
+        public async Task ShouldReturnNotFoundWhenGuestDoesntExists()
+        {
+            int guestId = _fixture.Create<int>();
+            _mockRepo.Setup(x => x.Get(guestId))
+                .Returns(Task.FromResult<Guest>(null));
+
+            var res = await _guestManager.Get(guestId);
+            Assert.IsNotNull(res);
+            Assert.False(res.Success);
+            Assert.That(res.Error, Is.EqualTo(ErrorCodes.NOT_FOUND));
+            Assert.IsNull(res.Data);
+        }
+
+        [Test]
         public async Task ShouldCreateGuest()
         {
             int expectedId = _fixture.Create<int>();
