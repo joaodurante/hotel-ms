@@ -1,4 +1,6 @@
-﻿using Domain.ValueObjects;
+﻿using Domain.Exceptions;
+using Domain.Ports;
+using Domain.ValueObjects;
 
 namespace Domain.Entities
 {
@@ -20,8 +22,30 @@ namespace Domain.Entities
         {
             get
             {
-                if(this.HasGuest || this.InMaintenance) { return true; }
+                if (this.HasGuest || this.InMaintenance) { return true; }
                 return false;
+            }
+        }
+
+        private void ValidateState()
+        {
+            if (string.IsNullOrEmpty(Name))
+            {
+                throw new MissingRequiredFieldsExceptions();
+            }
+        }
+
+        public async Task<int> Save(IRoomRepository roomRepository)
+        {
+            this.ValidateState();
+
+            if (this.Id == 0)
+            {
+                return await roomRepository.Create(this);
+            }
+            else
+            {
+                return await roomRepository.Update(this);
             }
         }
     }

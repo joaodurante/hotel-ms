@@ -6,14 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 namespace API.Controllers
 {
     [ApiController]
-    [Route("guests")]
-    public class GuestsController : ControllerBase
+    [Route("guest")]
+    public class GuestController : ControllerBase
     {
-        private readonly ILogger<GuestsController> _logger;
+        private readonly ILogger<GuestController> _logger;
         private readonly IGuestManager _guestManager;
 
-        public GuestsController(
-            ILogger<GuestsController> logger,
+        public GuestController(
+            ILogger<GuestController> logger,
             IGuestManager ports)
         {
             _logger = logger;

@@ -5,7 +5,7 @@ namespace Application.Ports
 {
     public interface IGuestManager
     {
-        Task<GuestResponse> Get(int id);
+        Task<GuestResponse> Get(int Id);
         Task<GuestResponse> Create(GuestDTO guest);
     }
 }

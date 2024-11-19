@@ -14,6 +14,8 @@ builder.Services.AddControllers();
 #region IoC
 builder.Services.AddScoped<IGuestManager, GuestManager>();
 builder.Services.AddScoped<IGuestRepository, GuestRepository>();
+builder.Services.AddScoped<IRoomManager, RoomManager>();
+builder.Services.AddScoped<IRoomRepository, RoomRepository>();
 #endregion
 
 #region DB wiring up
