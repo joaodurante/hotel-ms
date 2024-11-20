@@ -11,7 +11,7 @@ namespace Application.DTOs
         public int Level { get; set; }
         public bool InMaintenance { get; set; }
         public decimal Price { get; set; }
-        public int Currency { get; set; }
+        public AcceptedCurrencies Currency { get; set; }
         public bool HasGuest { get; set; }
         public bool IsAvailable { get; set; }
 
@@ -26,7 +26,7 @@ namespace Application.DTOs
                 Price = new Price
                 {
                     Value = roomDTO.Price,
-                    Currency = (AcceptedCurrencies)roomDTO.Currency
+                    Currency = roomDTO.Currency
                 }
             };
         }
@@ -40,7 +40,7 @@ namespace Application.DTOs
                 Level = room.Level,
                 InMaintenance = room.InMaintenance,
                 Price = room.Price.Value,
-                Currency = (int)room.Price.Currency,
+                Currency = room.Price.Currency,
                 HasGuest = room.HasGuest,
                 IsAvailable = room.isAvailable
             };

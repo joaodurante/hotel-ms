@@ -1,6 +1,7 @@
 ﻿using Application.DTOs;
 using Application.Ports;
 using Application.Responses;
+using Domain.Exceptions;
 using Domain.Ports;
 
 namespace Application
@@ -46,6 +47,15 @@ namespace Application
                 {
                     Success = true,
                     Data = request
+                };
+            }
+            catch (MissingRequiredFieldsExceptions)
+            {
+                return new RoomResponse
+                {
+                    Success = false,
+                    Error = ErrorCodes.MISSING_REQUIRED_FIELDS,
+                    Message = "Missing required fields"
                 };
             }
             catch (Exception)
