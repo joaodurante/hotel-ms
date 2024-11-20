@@ -3,24 +3,24 @@ using Domain.Ports;
 
 namespace Data.Repositories
 {
-    public class GuestRepository : IGuestRepository
+    public class BookingRepository : IBookingRepository
     {
         private readonly HotelDbContext _hotelDbContext;
-        public GuestRepository(HotelDbContext hotelDbContext)
+
+        public BookingRepository(HotelDbContext hotelDbContext)
         {
-            this._hotelDbContext = hotelDbContext;
+            _hotelDbContext = hotelDbContext;
         }
 
-        public async Task<Guest> Get(int id)
+        public async Task<Booking> Get(int id)
         {
-            return await _hotelDbContext.Guests.FindAsync(id);
+            return await _hotelDbContext.Bookings.FindAsync(id);
         }
-
-        public async Task<int> Create(Guest guest)
+        public async Task<int> Create(Booking booking)
         {
-            _hotelDbContext.Guests.Add(guest);
+            _hotelDbContext.Add(booking);
             await _hotelDbContext.SaveChangesAsync();
-            return guest.Id;
+            return booking.Id;
         }
 
         public Task Delete(int id)
@@ -28,12 +28,12 @@ namespace Data.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<List<Guest>> GetAll()
+        public Task<List<Booking>> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public Task<int> Update(Guest guest)
+        public Task<int> Update(Booking booking)
         {
             throw new NotImplementedException();
         }

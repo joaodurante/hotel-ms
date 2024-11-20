@@ -5,20 +5,20 @@ namespace Data.Repositories
 {
     public class RoomRepository : IRoomRepository
     {
-        private HotelDbContext hotelDbContext;
+        private readonly HotelDbContext _hotelDbContext;
         public RoomRepository(HotelDbContext hotelDbContext)
         {
-            this.hotelDbContext = hotelDbContext;
+            this._hotelDbContext = hotelDbContext;
         }
         public async Task<Room> Get(int id)
         {
-            return await hotelDbContext.Rooms.FindAsync(id);
+            return await _hotelDbContext.Rooms.FindAsync(id);
         }
 
         public async Task<int> Create(Room room)
         {
-            hotelDbContext.Rooms.Add(room);
-            await hotelDbContext.SaveChangesAsync();
+            _hotelDbContext.Rooms.Add(room);
+            await _hotelDbContext.SaveChangesAsync();
             return room.Id;
         }
 
