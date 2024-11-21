@@ -16,8 +16,7 @@ namespace Domain.Entities
         public DateTime PlacedAt { get; set; }
         public DateTime Start { get; set; }
         public DateTime End { get; set; }
-        private EStatus Status { get; set; }
-        public EStatus CurrentStatus { get { return Status; } }
+        public EStatus Status { get; set; }
         public Guest Guest { get; set; }
         public Room Room { get; set; }
 
@@ -44,6 +43,13 @@ namespace Domain.Entities
 
         public async Task<int> Save(IBookingRepository _bookingRepository)
         {
+            this.ValidateState();
+            this.Guest.ValidateState();
+            if (!this.Room.CanBeBooked())
+            {
+                throw new RoomCannotBeBookedException();
+            }
+
             if (this.Id == 0)
             {
                 return await _bookingRepository.Create(this);

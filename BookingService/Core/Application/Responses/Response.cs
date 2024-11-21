@@ -2,11 +2,17 @@
 {
     public enum ErrorCodes
     {
+        // generic error codes
         NOT_FOUND = 1,
         COULDNOT_STORE_DATA = 2,
         MISSING_REQUIRED_FIELDS = 3,
-        INVALID_PERSON_EMAIL = 4,
-        INVALID_PERSON_DOCUMENT = 5,
+
+        // guests error codes
+        INVALID_PERSON_EMAIL = 11,
+        INVALID_PERSON_DOCUMENT = 12,
+
+        // rooms error codes
+        ROOM_CANNOT_BE_BOOKED = 21
     }
 
     public abstract class Response

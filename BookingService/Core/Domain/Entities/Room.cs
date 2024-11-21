@@ -1,4 +1,5 @@
-﻿using Domain.Exceptions;
+﻿using Domain.Enums;
+using Domain.Exceptions;
 using Domain.Ports;
 using Domain.ValueObjects;
 
@@ -11,19 +12,29 @@ namespace Domain.Entities
         public int Level { get; set; }
         public bool InMaintenance { get; set; }
         public Price Price { get; set; }
+        public ICollection<Booking> Bookings { get; set; }
+
         public bool HasGuest
         {
             get
             {
-                return true;
+                var unavailableStatuses = new List<EStatus>()
+                {
+                    EStatus.Created,
+                    EStatus.Paid
+                };
+
+                return this.Bookings.Where(
+                    b => b.Room.Id == this.Id && unavailableStatuses.Contains(b.Status)
+                ).Count() > 0;
             }
         }
         public bool isAvailable
         {
             get
             {
-                if (this.HasGuest || this.InMaintenance) { return true; }
-                return false;
+                if (this.HasGuest || this.InMaintenance) { return false; }
+                return true;
             }
         }
 
@@ -47,6 +58,25 @@ namespace Domain.Entities
             {
                 return await roomRepository.Update(this);
             }
+        }
+
+        public bool CanBeBooked()
+        {
+            try
+            {
+                this.ValidateState();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            if (!this.isAvailable)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

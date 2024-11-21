@@ -13,7 +13,7 @@ namespace Domain.Entities
         public string Email { get; set; }
         public PersonId Document { get; set; }
 
-        private void ValidateState()
+        public void ValidateState()
         {
             if (string.IsNullOrEmpty(Name) || string.IsNullOrEmpty(Surname) || string.IsNullOrEmpty(Email))
             {

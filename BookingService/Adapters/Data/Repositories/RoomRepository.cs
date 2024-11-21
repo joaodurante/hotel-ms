@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using Domain.Ports;
+using Microsoft.EntityFrameworkCore;
 
 namespace Data.Repositories
 {
@@ -10,9 +11,13 @@ namespace Data.Repositories
         {
             this._hotelDbContext = hotelDbContext;
         }
+
         public async Task<Room> Get(int id)
         {
-            return await _hotelDbContext.Rooms.FindAsync(id);
+            return await _hotelDbContext.Rooms
+                .Include(r => r.Bookings)
+                .Where(r => r.Id == id)
+                .FirstAsync();
         }
 
         public async Task<int> Create(Room room)
