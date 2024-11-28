@@ -12,7 +12,10 @@
         INVALID_PERSON_DOCUMENT = 12,
 
         // rooms error codes
-        ROOM_CANNOT_BE_BOOKED = 21
+        ROOM_CANNOT_BE_BOOKED = 21,
+
+        // payment error codes
+        INVALID_PAYMENT_INTENTION = 31
     }
 
     public abstract class Response

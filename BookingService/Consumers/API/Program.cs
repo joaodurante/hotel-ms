@@ -1,5 +1,7 @@
 using Application;
+using Application.Paypal;
 using Application.Ports;
+using Application.Ports.Payment;
 using Data;
 using Data.Repositories;
 using Domain.Ports;
@@ -18,6 +20,7 @@ builder.Services.AddScoped<IRoomManager, RoomManager>();
 builder.Services.AddScoped<IRoomRepository, RoomRepository>();
 builder.Services.AddScoped<IBookingManager, BookingManager>();
 builder.Services.AddScoped<IBookingRepository, BookingRepository>();
+builder.Services.AddScoped<IPaypalService, PaypalAdapter>();
 
 #endregion
 
